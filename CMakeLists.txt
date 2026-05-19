@@ -10,6 +10,11 @@ pkg_check_modules(WEBKIT REQUIRED IMPORTED_TARGET webkit2gtk-4.1)
 
 add_executable(StreamingService main.cpp)
 
+target_include_directories(StreamingService PRIVATE
+        ${GTK4_INCLUDE_DIRS}
+        ${WEBKIT_INCLUDE_DIRS}
+)
+
 target_link_libraries(StreamingService PRIVATE
         PkgConfig::GTK4
         PkgConfig::WEBKIT

@@ -79,10 +79,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
     // --- WEB VIEW ---
     state->web_view = webkit_web_view_new();
     WebKitSettings *settings = webkit_web_view_get_settings(WEBKIT_WEB_VIEW(state->web_view));
-    webkit_settings_set_user_agent(
-        settings,
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-    );
+    webkit_settings_set_user_agent(settings, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
 
     gtk_stack_add_child(GTK_STACK(state->stack), state->web_view);
 
@@ -99,10 +96,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
 }
 
 int main(int argc, char **argv) {
-    GtkApplication *app = gtk_application_new(
-        "com.stream.launcher",
-        G_APPLICATION_DEFAULT_FLAGS
-    );
+    GtkApplication *app = gtk_application_new("com.stream.launcher", G_APPLICATION_DEFAULT_FLAGS);
 
     g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
 
