@@ -3,9 +3,11 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 struct WebSite {
-    std::string name;
-    std::string url;
+    string name;
+    string url;
 };
 
 struct AppState {
@@ -14,7 +16,7 @@ struct AppState {
     GtkWidget *web_view;
 };
 
-const std::vector<WebSite> SITES = {
+const vector<WebSite> SITES = {
     {"IMDb Stream", "https://streamimdb.ru"},
     {"Anikai", "https://anikai.to/"},
     {"Weflix", "https://weflix.to/"},
@@ -79,7 +81,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
     WebKitSettings *settings = webkit_web_view_get_settings(WEBKIT_WEB_VIEW(state->web_view));
     webkit_settings_set_user_agent(
         settings,
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome Safari"
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     );
 
     gtk_stack_add_child(GTK_STACK(state->stack), state->web_view);
