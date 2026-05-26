@@ -1,2 +1,1 @@
-# Streaming-Platform-Launcher
-Scrapes streaming sites like streamimdb.ru and any other custom sites in a native application that you can self host on a low power home server like a rasberry pi
+Application in it's very early prototype stages. Feel free to fork and continue your own development. 
